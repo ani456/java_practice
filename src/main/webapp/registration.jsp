@@ -15,6 +15,9 @@
 </head>
 <body>
 
+	<input type="hidden" id="status"
+		value="<%= request.getAttribute("status")%>">
+
 	<div class="main">
 
 		<!-- Sign up form -->
@@ -23,7 +26,7 @@
 				<div class="signup-content">
 					<div class="signup-form">
 						<h2 class="form-title">Sign up</h2>
-					
+
 						<form method="post" action="register" class="register-form"
 							id="register-form">
 							<div class="form-group">
@@ -79,7 +82,16 @@
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<link rel="stylesheet" href="alert/dist/sweetalert.css">  //Library to get alert
+	<link rel="stylesheet" href="alert/dist/sweetalert.css">
+	//Library to get alert
+
+	<script type="text/javascript">
+	var status = document.getElementById("status").value;
+	if(status === "success"){
+		swal("Congrats", "Account Created Successfully","success");
+	}
+	
+	</script>
 
 
 
